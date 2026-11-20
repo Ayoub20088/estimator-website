@@ -38,3 +38,14 @@
     });
   }
 })();
+
+// Menu button: open and close the list of pages.
+(function () {
+  var btn = document.querySelector(".menu-btn"), menu = document.getElementById("menu");
+  if (!btn || !menu) return;
+  function set(open) { menu.hidden = !open; btn.setAttribute("aria-expanded", open ? "true" : "false"); }
+  btn.addEventListener("click", function (e) { e.stopPropagation(); set(menu.hidden); });
+  menu.addEventListener("click", function (e) { if (e.target.tagName === "A") set(false); });
+  document.addEventListener("click", function (e) { if (!menu.hidden && !menu.contains(e.target)) set(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
+})();

@@ -244,3 +244,13 @@ footer .copy { color: var(--ink-soft); font-size: 14px; }
 .btn-big { display: inline-flex; align-items: center; justify-content: center; background: var(--ink); color: #fff; text-decoration: none; font-weight: 600; font-size: 18px; border-radius: 999px; padding: 16px 30px; transition: transform .15s ease; }
 .btn-big:hover { transform: translateY(-2px); }
 .btn-big:active { transform: scale(.97); }
+/* Menu button and drop-down list (all pages) */
+.nav .menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); transition: transform .15s ease; }
+.nav .menu-btn:active { transform: scale(.94); }
+.menu { position: absolute; top: 64px; right: max(16px, env(safe-area-inset-right, 0px)); width: min(320px, calc(100% - 32px)); margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow-soft); padding: 8px; display: grid; }
+.menu[hidden] { display: none; }
+.menu a { display: block; padding: 13px 14px; border-radius: 12px; text-decoration: none; color: var(--ink); font-size: 16px; font-weight: 500; }
+.menu a:hover, .menu a:active { background: var(--bg); }
+.nav .btn-dark svg { margin-right: -2px; }
+.final .badge-store img { height: 64px; }
+.final .fine { margin: 18px 0 0; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
