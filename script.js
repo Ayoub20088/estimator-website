@@ -1,10 +1,12 @@
 (function () {
   // Links like ./#pricing from another page: go there once the pictures have their size.
   if (location.hash.length > 1) {
-    window.addEventListener("load", function () {
+    var go = function () {
       var el = document.getElementById(location.hash.slice(1));
-      if (el) el.scrollIntoView({ block: "start" });
-    });
+      if (el) el.scrollIntoView({ block: "start", behavior: "instant" });
+    };
+    go();
+    window.addEventListener("load", go);
   }
 
   // Copy the email address.
